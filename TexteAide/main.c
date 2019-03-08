@@ -22,23 +22,32 @@ int main() {
             printf("Ceci n'est pas un choix !");
         }
 
-    }while (choix <0 || choix >3);
+        switch(choix)
+        {
+            case 0: printf("\nA la prochaine !");
+                break;
 
-    switch(choix)
-    {
-        case 0: printf("Allons Jouer !");
-            break;
+            case 1: printf("\n\nJouer\n");
+                printf("\nBievenue sur le mode jeu");
+                break;
 
-        case 1: printf("\n\nInstructions\n");
-            printf("\nLes regles s'affichent...");
-            printf("\nIntroduire 0 pour revenir en arriere: ");
-            scanf("%d",&choix);
-            if (choix == 0)
-            {
 
-            }
+            case 2: printf("\n\nInstructions\n");
+                printf("\nLes regles s'affichent...");
+                printf("\nIntroduire 0 pour revenir en arriere: ");
+                scanf("%d",&choix);
+                if (choix == 0)
+                {
+                    choix=+100;
+                    break;
+                }
+            case 3: printf("\n\nParametres\n");
+                break;
+        }
 
-    }
+    }while (choix < 0 || choix > 3);
+
+
 
 
     return 0;
