@@ -5,7 +5,7 @@
 ### 7.1	Généralités
 Ce module MA-20 a pour objectifs d'entraîner les étudiants à la réalisation de projet de type développement.
 ### 7.2	Fonctionnalités minimales
-Le type d’application C demandé doit offrir les fonctionnalités minimales suivantes :
+Le type d’application C demandé doit offrir les fonctionnalités minimales suivantes :<br/>
 Version 0.1 (pour le 2 mars 2018) :
 *	Jouer à la bataille navale alors que la position des bateaux est codée dans le programme
 *	Afficher l’aide du jeu
@@ -20,5 +20,5 @@ Notes :
 *	Une extension pourra être envisagée pour ceux qui auraient terminé toutes les fonctionnalités avant la fin du temps imparti. Elle sera à discuter entre l’élève et le mandant du projet.
 
 ## 7b Utilisation
-*Lancer le jeu depuis l'exécutable nommé "Bataille Navale Game"
+*Lancer le jeu depuis l'exécutable nommé "Bataille Navale Game"<br/>
 *Suivre les instructions dans le jeu
