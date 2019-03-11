@@ -18,3 +18,7 @@ Notes :
 *	Des fichiers seront utilisés pour la persistance des données.
 *	Un menu de type console sera utilisé pour accéder aux différentes fonctionnalités.
 *	Une extension pourra être envisagée pour ceux qui auraient terminé toutes les fonctionnalités avant la fin du temps imparti. Elle sera à discuter entre l’élève et le mandant du projet.
+
+## 7b Utilisation
+*Lancer le jeu depuis l'exécutable nommé "Bataille Navale Game"
+*Suivre les instructions dans le jeu
