@@ -9,4 +9,10 @@
 C:/Users/Luis-Pedro.FERNANDES/Documents/Temp/Bataille-Navale/Bataille Navale Game/main.c
 stdio.h
 -
+stdlib.h
+-
+windows.h
+-
+unistd.h
+-
 

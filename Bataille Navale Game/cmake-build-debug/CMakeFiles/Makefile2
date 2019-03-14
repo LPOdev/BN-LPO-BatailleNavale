@@ -64,39 +64,39 @@ CMAKE_SOURCE_DIR = "C:\Users\Luis-Pedro.FERNANDES\Documents\Temp\Bataille-Navale
 CMAKE_BINARY_DIR = "C:\Users\Luis-Pedro.FERNANDES\Documents\Temp\Bataille-Navale\Bataille Navale Game\cmake-build-debug"
 
 #=============================================================================
-# Target rules for target CMakeFiles/TexteAide.dir
+# Target rules for target CMakeFiles/Bataille_Navale_Game.dir
 
 # All Build rule for target.
-CMakeFiles/TexteAide.dir/all:
-	$(MAKE) -f CMakeFiles\TexteAide.dir\build.make CMakeFiles/TexteAide.dir/depend
-	$(MAKE) -f CMakeFiles\TexteAide.dir\build.make CMakeFiles/TexteAide.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Luis-Pedro.FERNANDES\Documents\Temp\Bataille-Navale\Bataille Navale Game\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target TexteAide"
-.PHONY : CMakeFiles/TexteAide.dir/all
+CMakeFiles/Bataille_Navale_Game.dir/all:
+	$(MAKE) -f CMakeFiles\Bataille_Navale_Game.dir\build.make CMakeFiles/Bataille_Navale_Game.dir/depend
+	$(MAKE) -f CMakeFiles\Bataille_Navale_Game.dir\build.make CMakeFiles/Bataille_Navale_Game.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Luis-Pedro.FERNANDES\Documents\Temp\Bataille-Navale\Bataille Navale Game\cmake-build-debug\CMakeFiles" --progress-num=1,2 "Built target Bataille_Navale_Game"
+.PHONY : CMakeFiles/Bataille_Navale_Game.dir/all
 
 # Include target in all.
-all: CMakeFiles/TexteAide.dir/all
+all: CMakeFiles/Bataille_Navale_Game.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/TexteAide.dir/rule: cmake_check_build_system
+CMakeFiles/Bataille_Navale_Game.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Luis-Pedro.FERNANDES\Documents\Temp\Bataille-Navale\Bataille Navale Game\cmake-build-debug\CMakeFiles" 2
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/TexteAide.dir/all
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/Bataille_Navale_Game.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Luis-Pedro.FERNANDES\Documents\Temp\Bataille-Navale\Bataille Navale Game\cmake-build-debug\CMakeFiles" 0
-.PHONY : CMakeFiles/TexteAide.dir/rule
+.PHONY : CMakeFiles/Bataille_Navale_Game.dir/rule
 
 # Convenience name for target.
-TexteAide: CMakeFiles/TexteAide.dir/rule
+Bataille_Navale_Game: CMakeFiles/Bataille_Navale_Game.dir/rule
 
-.PHONY : TexteAide
-
-# clean rule for target.
-CMakeFiles/TexteAide.dir/clean:
-	$(MAKE) -f CMakeFiles\TexteAide.dir\build.make CMakeFiles/TexteAide.dir/clean
-.PHONY : CMakeFiles/TexteAide.dir/clean
+.PHONY : Bataille_Navale_Game
 
 # clean rule for target.
-clean: CMakeFiles/TexteAide.dir/clean
+CMakeFiles/Bataille_Navale_Game.dir/clean:
+	$(MAKE) -f CMakeFiles\Bataille_Navale_Game.dir\build.make CMakeFiles/Bataille_Navale_Game.dir/clean
+.PHONY : CMakeFiles/Bataille_Navale_Game.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Bataille_Navale_Game.dir/clean
 
 .PHONY : clean
 

@@ -110,17 +110,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named TexteAide
+# Target rules for targets named Bataille_Navale_Game
 
 # Build rule for target.
-TexteAide: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 TexteAide
-.PHONY : TexteAide
+Bataille_Navale_Game: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Bataille_Navale_Game
+.PHONY : Bataille_Navale_Game
 
 # fast build rule for target.
-TexteAide/fast:
-	$(MAKE) -f CMakeFiles\TexteAide.dir\build.make CMakeFiles/TexteAide.dir/build
-.PHONY : TexteAide/fast
+Bataille_Navale_Game/fast:
+	$(MAKE) -f CMakeFiles\Bataille_Navale_Game.dir\build.make CMakeFiles/Bataille_Navale_Game.dir/build
+.PHONY : Bataille_Navale_Game/fast
 
 main.obj: main.c.obj
 
@@ -128,7 +128,7 @@ main.obj: main.c.obj
 
 # target to build an object file
 main.c.obj:
-	$(MAKE) -f CMakeFiles\TexteAide.dir\build.make CMakeFiles/TexteAide.dir/main.c.obj
+	$(MAKE) -f CMakeFiles\Bataille_Navale_Game.dir\build.make CMakeFiles/Bataille_Navale_Game.dir/main.c.obj
 .PHONY : main.c.obj
 
 main.i: main.c.i
@@ -137,7 +137,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) -f CMakeFiles\TexteAide.dir\build.make CMakeFiles/TexteAide.dir/main.c.i
+	$(MAKE) -f CMakeFiles\Bataille_Navale_Game.dir\build.make CMakeFiles/Bataille_Navale_Game.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -146,7 +146,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) -f CMakeFiles\TexteAide.dir\build.make CMakeFiles/TexteAide.dir/main.c.s
+	$(MAKE) -f CMakeFiles\Bataille_Navale_Game.dir\build.make CMakeFiles/Bataille_Navale_Game.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -156,7 +156,7 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
-	@echo ... TexteAide
+	@echo ... Bataille_Navale_Game
 	@echo ... rebuild_cache
 	@echo ... main.obj
 	@echo ... main.i
