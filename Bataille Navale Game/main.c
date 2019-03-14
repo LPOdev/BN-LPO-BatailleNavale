@@ -29,6 +29,11 @@ int main() {
 
             case 1: printf("\n\nJouer\n");
                 printf("\nBievenue sur le mode jeu");
+                printf("\nIntroduire 0 pour revenir en arriere: ");
+                if (choix == 0)
+                {
+                    choix=+100;
+                    break;
                 break;
 
 
