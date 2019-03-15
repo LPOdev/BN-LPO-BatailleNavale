@@ -1,6 +1,6 @@
 //Title: Bataille Navale
 //Author: LPO
-//Date: 14.03.2019
+//Date: 15.03.2019
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
@@ -11,7 +11,7 @@
 
 int Grille1[9][9]=
         {
-                0,0,0,0,0,0,0,0,0,
+                0,1,1,1,1,0,0,0,0,
                 0,0,0,0,0,0,0,0,0,
                 0,0,0,0,1,0,0,0,0,
                 0,0,0,0,1,0,0,0,0,
@@ -19,10 +19,10 @@ int Grille1[9][9]=
                 0,0,0,0,0,0,0,0,0,
                 0,0,0,0,0,0,0,0,0,
                 0,0,0,0,0,0,0,0,0,
-                0,0,0,0,0,0,0,0,0
+                0,0,0,0,0,0,1,1,0
         };
 
-void Game()
+void Grille()
 {
     int x;
     int y;
@@ -44,7 +44,19 @@ void Game()
         printf("%d",x+1);
         for(y=0;y<9;y++)
         {
-            printf("│ %d ",Grille1[x][y]);
+            if(Grille1[x][y]==0|| Grille1[x][y]==1)
+            {
+            printf("│ ~ ");
+            }else if(Grille1[x][y]==2)
+            {
+                printf("│ x ");
+            }else if(Grille1[x][y]==3)
+            {
+                printf("│   ");
+            }else if(Grille1[x][y]==4)
+            {
+                printf("│ X ");
+            }
         }
         if(y==9)
         {
@@ -56,8 +68,6 @@ void Game()
         }
     }
 }
-
-
 
 int main() {
     SetConsoleOutputCP(65001);
@@ -85,42 +95,55 @@ int main() {
             case 0: printf("\nA la prochaine !");
                 return 0;
 
-            case 1: printf("\n\nJouer\n");
+            case 1: printf("\n_____Jouer_____\n");
                 printf("\nBievenue sur le mode jeu");
-                printf("\nIntroduire 0 pour revenir en arriere ou 1 pour lancer une partie: \n");
-                scanf("%d",&choix);
-                if (choix == 0)
+                do
                 {
-                    choix=+100;
-                    break;
-                }
-                else if(choix==1)
-                {
-                    Game();
-                }
-                else
-                {
-                    printf("Ce n'est pas un choix !\n");
-                    break;
-                }
+                    printf("\nIntroduire 0 pour revenir en arriere ou 1 pour lancer une partie: \n");
+                    scanf("%d", &choix);
+                    if (choix == 0) {
+                        choix = +100;
+                        break;
+                    } else if (choix == 1) {
+                        Grille();
+                    } else
+                    {
+                        printf("Ce n'est pas un choix !\n");
+                    }
+                }while(choix != 0 && choix !=1);
                 break;
 
-
-            case 2: printf("\n\nInstructions\n");
+            case 2: printf("\n\n_____Instructions_____\n");
                 printf("\nLes règles s'affichent...");
-                printf("\nIntroduire 0 pour revenir en arriere: ");
-                scanf("%d",&choix);
-                if (choix == 0)
-                {
-                    choix=+100;
-                    break;
-                }
-                else
-                {
-                    printf("Ce n'est pas un choix !\n");
-                    break;
-                }
+                do {
+                    printf("\nIntroduire 0 pour revenir en arriere: ");
+                    scanf("%d", &choix);
+                    if (choix == 0) {
+                        choix = +100;
+                        break;
+                    } else {
+                        printf("Ce n'est pas un choix !\n");
+
+                    }
+                } while(choix != 0);
+                break;
+
             case 3: printf("\n\nParamètres\n");
+                do {
+                    printf("\nIntroduire 0 pour revenir en arriere ou 1 pour modifier la grille: ");
+                    scanf("%d", &choix);
+                    if (choix == 0) {
+                        choix = +100;
+                        break;
+                    }else if(choix == 1)
+                    {
+                        Grille();
+                    }
+                    else {
+                        printf("Ce n'est pas un choix !\n");
+
+                    }
+                } while(choix != 0);
                 break;
         }
 
@@ -128,3 +151,4 @@ int main() {
 
     return 0;
 }
+
