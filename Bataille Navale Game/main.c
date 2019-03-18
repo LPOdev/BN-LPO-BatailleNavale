@@ -130,7 +130,9 @@ int main() {
 
             case 3: printf("\n\nParamètres\n");
                 do {
-                    printf("\nIntroduire 0 pour revenir en arriere ou 1 pour modifier la grille: ");
+                    printf("\n1. Modifier la grille");
+                    printf("\n0. Revenir en arriere");
+                    printf("\n\nIntroduire votre choix: ");
                     scanf("%d", &choix);
                     if (choix == 0) {
                         choix = +100;
