@@ -11,22 +11,22 @@
 
 int Grille1[9][9]=
         {
-                0,1,1,1,1,0,0,0,0,
+                0,4,4,4,4,0,0,0,0,
                 0,0,0,0,0,0,0,0,0,
-                0,0,0,0,1,0,0,0,0,
-                0,0,0,0,1,0,0,0,0,
-                0,0,0,0,1,0,0,0,0,
+                0,0,0,0,3,0,0,0,0,
+                0,0,0,0,3,0,0,0,0,
+                0,0,0,0,3,0,0,0,0,
                 0,0,0,0,0,0,0,0,0,
                 0,0,0,0,0,0,0,0,0,
                 0,0,0,0,0,0,0,0,0,
-                0,0,0,0,0,0,1,1,0
+                1,0,0,0,0,0,2,2,0
         };
 
 void Grille()
 {
     int x;
     int y;
-    printf("  X  A   B   C   D   E   F   G   H   I");
+    printf("  X  1   2   3   4   5   6   7   8   9");
     for(x= 0;x<9;x++)
     {
         printf("\n");
@@ -44,16 +44,16 @@ void Grille()
         printf("%d",x+1);
         for(y=0;y<9;y++)
         {
-            if(Grille1[x][y]==0|| Grille1[x][y]==1)
+            if(Grille1[x][y]==0|| Grille1[x][y]==1 || Grille1[x][y]==2 || Grille1[x][y]==3 || Grille1[x][y]==4)
             {
-            printf("│ ~ ");
-            }else if(Grille1[x][y]==2)
+            printf("│   ");
+            }else if(Grille1[x][y]==12 || Grille1[x][y]==13 || Grille1[x][y]==14)
             {
                 printf("│ x ");
-            }else if(Grille1[x][y]==3)
+            }else if(Grille1[x][y]==-1)
             {
-                printf("│   ");
-            }else if(Grille1[x][y]==4)
+                printf("│ ~ ");
+            }else if(Grille1[x][y]==11 ||Grille1[x][y]==12 || Grille1[x][y]==13  || Grille1[x][y]==14)
             {
                 printf("│ X ");
             }
@@ -68,6 +68,36 @@ void Grille()
         }
     }
 }
+void Game()
+{
+    int cvert;
+    int chorz;
+    int arret;
+    do
+    {
+        Grille();
+        printf("\nIntroduisez la coordonée vertical: ");
+        scanf("%d",&cvert);
+        printf("\nIntroduisez la coordonée horizontal: ");
+        scanf("%d",&chorz);
+
+        if(Grille1[chorz -1][cvert-1] == 0)
+        {
+            Grille1[chorz-1][cvert-1] = -1;
+        }
+        else if(Grille1[chorz-1][cvert-1] == 1 || Grille1[chorz-1][cvert-1] == 2 || Grille1[chorz-1][cvert-1] == 3 || Grille1[chorz-1][cvert-1] == 4)
+        {
+            Grille1[chorz-1][cvert-1]+= 10;
+        } else if (Grille1[chorz-1][cvert-1] > 10 || Grille1[chorz-1][cvert-1] == -1)
+        {
+            printf("Vous avez deja tire la !");
+        }
+
+        printf("Arret: ");
+        scanf("%d",&arret);
+    } while(arret != 0);
+}
+
 
 int main() {
     SetConsoleOutputCP(65001);
@@ -114,7 +144,7 @@ int main() {
                         choix = +100;
                         break;
                     } else if (choix == 1) {
-                        Grille();
+                        Game();
                     } else
                     {
                         printf("Ce n'est pas un choix !\n");
