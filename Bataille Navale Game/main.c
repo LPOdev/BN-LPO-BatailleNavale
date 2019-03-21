@@ -74,6 +74,16 @@ int main() {
 
     int choix;
 
+    //Boat
+    printf("                         \t  )___(\n"
+           "                           _______/__/_\n"
+           "                  ___     /===========|   ___\n"
+           " ____       __   [\\\\\\]___/____________|__[///]   __\n"
+           " \\   \\_____[\\\\]__/___________________________\\__[//]___\n"
+           "  \\40A                                                 |\n"
+           "   \\                                                  /\n"
+           "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
     //Menu Principal
     do {
         printf("\n\n_____Bataille Navale_____\n\n");
@@ -89,7 +99,6 @@ int main() {
         {
             printf("Ceci n'est pas un choix !");
         }
-
         switch(choix)
         {
             case 0: printf("\nA la prochaine !");
@@ -114,9 +123,10 @@ int main() {
                 break;
 
             case 2: printf("\n\n_____Instructions_____\n");
-                printf("\nLes règles s'affichent...");
+                printf("\nLes règles s'affichent...\n");
                 do {
-                    printf("\nIntroduire 0 pour revenir en arriere: ");
+                    printf("\n0. Revenir en arriere\n");
+                    printf("\nIntroduire votre choix: ");
                     scanf("%d", &choix);
                     if (choix == 0) {
                         choix = +100;
@@ -128,7 +138,7 @@ int main() {
                 } while(choix != 0);
                 break;
 
-            case 3: printf("\n\nParamètres\n");
+            case 3: printf("\n\n_____Paramètres_____\n");
                 do {
                     printf("\n1. Modifier la grille");
                     printf("\n0. Revenir en arriere");
