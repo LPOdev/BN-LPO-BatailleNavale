@@ -26,6 +26,7 @@ int Coule[5] = {0, 0, 0, 0, 0};
 void Grille() {
     int x;
     int y;
+
     printf("  X  1   2   3   4   5   6   7   8   9");
     for (x = 0; x < 9; x++) {
         printf("\n");
@@ -40,29 +41,37 @@ void Grille() {
 
         printf("%d", x + 1);
         for (y = 0; y < 9; y++) {
+
+            //Fonction Coule
+            //for (int i = 0; i <=4; i++)
+            //{
+            //    if(Coule[y]==y)
+            //    {
+            //        if(Grille1[x][y] == 12 || Grille1[x][y] == 13 || Grille1[x][y] == 14)
+            //        {
+            //            Grille1[x][y]+=10;
+            //        }
+            //    }
+            //}
+
             if (Grille1[x][y] == 0 || Grille1[x][y] == 1 || Grille1[x][y] == 2 || Grille1[x][y] == 3 ||
-                Grille1[x][y] == 4)
-            {
+                Grille1[x][y] == 4) {
                 printf("│   ");
 
-            } else if (Grille1[x][y] == -1)
-            {
+            } else if (Grille1[x][y] == -1) {
                 printf("│ ~ ");
-            }else if (Grille1[x][y] == 11 || Grille1[x][y] == Coule[x] - 10)
-            {
+            } else if (Grille1[x][y] == 11 || Grille1[x][y] == Coule[Grille1[x][y] - 20]) {
                 printf("│ X ");
-            }else if (Grille1[x][y] == 12 || Grille1[x][y] == 13 || Grille1[x][y] == 14)
-            {
+            } else if (Grille1[x][y] == 12 || Grille1[x][y] == 13 || Grille1[x][y] == 14) {
                 printf("│ x ");
             }
-            if (y == 9)
-            {
+            if (y == 8) {
                 printf("│");
             }
-            if (x == 8)
-            {
-                printf("\n   └───┴───┴───┴───┴───┴───┴───┴───┴───┘");
-            }
+        }
+
+        if (x == 8) {
+            printf("\n   └───┴───┴───┴───┴───┴───┴───┴───┴───┘");
         }
     }
 }
@@ -82,21 +91,25 @@ void Game() {
 
         if (o == 0) {
             Grille1[chorz - 1][cvert - 1] = -1;
+
         } else if (o == 1 || o == 2 || o == 3 || o == 4) {
             Coule[Grille1[chorz - 1][cvert - 1]] += 1;
             Grille1[chorz - 1][cvert - 1] += 10;
+
         } else if (o > 10 || o == -1) {
             printf("\nVous avez deja tire la !");
         }
+
         gameover = 1;
+        system("cls");
         for (int i = 1; i <= 4; i++) {
             if (Coule[i] != i) {
 
                 gameover = 0;
             }
+        }
             if (gameover == 1) {
                 printf(" /$$    /$$ /$$             /$$               /$$                    \n"
-
                        "| $$   | $$|__/            | $$              |__/                    \n"
                        "| $$   | $$ /$$  /$$$$$$$ /$$$$$$    /$$$$$$  /$$  /$$$$$$   /$$$$$$ \n"
                        "|  $$ / $$/| $$ /$$_____/|_  $$_/   /$$__  $$| $$ /$$__  $$ /$$__  $$\n"
@@ -106,7 +119,6 @@ void Game() {
                        "    \\_/    |__/ \\_______/   \\___/   \\______/ |__/|__/       \\_______/ \n");
                 system("pause");
             }
-        }
 
     } while (gameover == 0);
 }
