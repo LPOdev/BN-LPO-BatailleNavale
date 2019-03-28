@@ -23,6 +23,27 @@ int Grille1[9][9] =
         };
 int Coule[5] = {0, 0, 0, 0, 0};
 
+void coule(int x, int y)
+{
+    //Fonction Coule
+    for (int i = 1; i <=4; i++)
+    {
+        if(Coule[i]==i)
+        {
+            for (int s = 0; s < 9; s++) //for (x = 0; x < 9; x++)
+            {
+                for(int u =0; u < 9; u++)
+                {
+                    if(Grille1[x][y] == 12 || Grille1[x][y] == 13 || Grille1[x][y] == 14)
+                    {
+                        Grille1[x][y] += 10;
+                    }
+                }
+            }
+        }
+    }
+}
+
 void Grille() {
     int x;
     int y;
@@ -42,17 +63,7 @@ void Grille() {
         printf("%d", x + 1);
         for (y = 0; y < 9; y++) {
 
-            //Fonction Coule
-            //for (int i = 0; i <=4; i++)
-            //{
-            //    if(Coule[y]==y)
-            //    {
-            //        if(Grille1[x][y] == 12 || Grille1[x][y] == 13 || Grille1[x][y] == 14)
-            //        {
-            //            Grille1[x][y]+=10;
-            //        }
-            //    }
-            //}
+           coule(x,y);
 
             if (Grille1[x][y] == 0 || Grille1[x][y] == 1 || Grille1[x][y] == 2 || Grille1[x][y] == 3 ||
                 Grille1[x][y] == 4) {
@@ -60,7 +71,7 @@ void Grille() {
 
             } else if (Grille1[x][y] == -1) {
                 printf("│ ~ ");
-            } else if (Grille1[x][y] == 11 || Grille1[x][y] == Coule[Grille1[x][y] - 20]) {
+            } else if (Grille1[x][y] == 11 || Grille1[x][y] == 22 ||Grille1[x][y] == 23||Grille1[x][y] == 24) {
                 printf("│ X ");
             } else if (Grille1[x][y] == 12 || Grille1[x][y] == 13 || Grille1[x][y] == 14) {
                 printf("│ x ");
@@ -122,7 +133,6 @@ void Game() {
 
     } while (gameover == 0);
 }
-
 
 int main() {
     SetConsoleOutputCP(65001);
@@ -187,7 +197,6 @@ int main() {
                         break;
                     } else {
                         printf("Ce n'est pas un choix !\n");
-
                     }
                 } while (choix != 0);
                 break;
@@ -206,7 +215,6 @@ int main() {
                         Grille();
                     } else {
                         printf("Ce n'est pas un choix !\n");
-
                     }
                 } while (choix != 0);
                 break;
