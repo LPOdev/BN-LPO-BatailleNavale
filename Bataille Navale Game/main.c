@@ -19,7 +19,7 @@
 #define SHBB 193 // ┴, Single Horizontal Bottom Border
 #define SHTB 194 // ┬, Single Horizontal Top Border
 #define SC   197 // ┼, Single Center
-#define nbgrilles 3
+#define nbgrilles 4
 
 void Bateau()
 {
@@ -38,12 +38,14 @@ int Grille[SIZE][SIZE] = {};
 void chosegri() {
 
     int choosegrille = 1000;
+    char randomname[50];
     do
     {
         printf("\n");
         for (int i = 0; i < nbgrilles; i++) {
             printf("\tGrille %d",i+1);
         }
+        printf("\t0.Random");
 
         printf("\n\nChossissez une grille: ");
         scanf("%d", &choosegrille);
@@ -53,21 +55,16 @@ void chosegri() {
             printf("\nCette grille n'est pas disponnible ou n'existe pas !");
             choosegrille+=1000;
         }
-    }while(choosegrille<1 && choosegrille>nbgrilles);
+    }while(choosegrille<0 && choosegrille>nbgrilles);
 
-    FILE *fichier = NULL;
-    switch (choosegrille)
+    if(choosegrille==0)
     {
-        case 1: fichier =fopen("Grille1.txt","r");
-            break;
-
-        case 2: fichier =fopen("Grille2.txt","r");
-            break;
-
-        case 3: fichier=fopen("Grille3.txt","r");
-
-
+        choosegrille=  rand() % 4;
     }
+    FILE *fichier = NULL;
+    sprintf(randomname,"Grille%d.txt",choosegrille);
+    fichier =fopen(randomname,"r");
+
     for (int x = 0; x < SIZE;x++)
     {
         for (int y = 0; y <SIZE ;y++)
@@ -77,8 +74,6 @@ void chosegri() {
         }
     }
     fclose(fichier);
-
-
 }
 int Coule[5] = {0, 0, 0, 0, 0};
 void coule(int x, int y)
@@ -233,7 +228,9 @@ void Instructions()
     printf("\nPour démarrer une partie:");
     printf("\nSur le Menu Principal: Entrez le chiffre 1 pour aller dans le menu jouer et ensuite il suffit d'entrer le chiffre de la grille que vous souhaitez");
     printf("\n\nPour jouer une partie:");
-    printf("\nIl faut d'abord entrer la coordonnée horizontale de la case ou vous voulez tirer et ensuite la coordonée vertical. Il faut couler les 4 bateaux pour gagner. À la fin de la partie il suffit d'appuyer sur une touche pour revenir au Menu Principal.\n\n");
+    printf("\nIl faut d'abord entrer la coordonnée horizontale de la case ou vous voulez tirer et ensuite la coordonée vertical. Il faut couler les 4 bateaux pour gagner. À la fin de la partie il suffit d'appuyer sur une touche pour revenir au Menu Principal.");
+    printf("\n\nLes 4 bateaux diffèrents: \t1 bateau de 1 case \t1 bateau de 2 cases \t 1 bateau de 3 cases \t 1 bateau de 4 cases");
+    printf("\n\nLes diffèrents caractères: \t~ = à l'eau \tx = touché \t/ = coulé\n\n");
     system("pause");
 }
 void Parametres()
